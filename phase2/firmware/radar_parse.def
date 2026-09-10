@@ -1,0 +1,13 @@
+LIBRARY radar_parse
+EXPORTS
+radar_crc16
+radar_parse_frame
+radar_frame_size
+feature_extract_window
+feature_normalize
+feature_quantize
+tracker_init
+tracker_step
+int_softmax
+dashboard_state_json
+dashboard_health_json

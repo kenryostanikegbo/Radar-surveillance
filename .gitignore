@@ -1,0 +1,83 @@
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================================
+# Virtual environments
+# ============================================================
+venv/
+env/
+.venv/
+ENV/
+
+# ============================================================
+# Radar datasets (large; reproducible from raw sources)
+# ============================================================
+phase2/data/
+phase2/data_raw/
+*.npz
+!phase2/models/norm_params.npz
+
+# ============================================================
+# Trained Keras models (regenerable; small enough to commit
+# only the INT8 TFLite + its C array + norm params)
+# ============================================================
+phase2/models/*.keras
+phase2/models/*.h5
+phase2/models/checkpoints/
+
+# ============================================================
+# ESP-IDF / ESP32 build output (when IDF toolchain lands)
+# ============================================================
+phase2/firmware/build/
+phase2/firmware/sdkconfig
+phase2/firmware/dependencies.lock
+
+# ============================================================
+# MSVC C build artifacts (radar_parse.dll is rebuilt by
+# scripts/build_firmware.bat and dropped in C:\tmp\)
+# ============================================================
+*.obj
+*.lib
+*.exp
+*.pdb
+*.dll
+*.exe
+
+# ============================================================
+# OS / editor cruft
+# ============================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================================
+# Logs and local scratch
+# ============================================================
+*.log
+*.tmp
+nul
+
+# ============================================================
+# Allow-list: keep these specific files even if a rule above
+# would match them.
+# ============================================================
+!phase2/models/norm_params.npz
+!phase2/models/model_int8.tflite
+!phase2/models/model_metadata.h
+!phase2/models/model_data.cc

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radar Surveillance Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Radar Surveillance</h1>
+    <div class="status">
+      <span>Uptime: <span id="uptime">—</span>s</span>
+      <span>FPS: <span id="fps">—</span></span>
+      <span>Infer: <span id="infer-ms">—</span> ms</span>
+      <span>Heap: <span id="heap">—</span> KB</span>
+      <span>Frames: <span id="frame-count">0</span></span>
+    </div>
+  </header>
+  <main>
+    <section class="radar">
+      <canvas id="radar-canvas" width="800" height="800"></canvas>
+    </section>
+    <aside class="tracks">
+      <h2>Tracks</h2>
+      <ul id="tracks-list"></ul>
+    </aside>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
